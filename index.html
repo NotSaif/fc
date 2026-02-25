@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC26 Boost — Premium EA FC 26 Services</title>
+    <meta name="description"
+        content="Get your FC 26 objectives done fast. Icon Swaps, Rivals, FUT Champions, and more. Trusted by thousands of players.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.08);
+            --glass: rgba(255, 255, 255, 0.06);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #f0f0f5;
+            --text-secondary: #8a8a9a;
+            --accent-green: #00e676;
+            --accent-blue: #448aff;
+            --accent-purple: #b388ff;
+            --accent-orange: #ff9100;
+            --accent-gold: #ffd740;
+            --accent-cyan: #18ffff;
+            --gradient-main: linear-gradient(135deg, #00e676, #448aff);
+            --shadow-glow: 0 0 40px rgba(0, 230, 118, 0.15);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+            animation: orbFloat 12s ease-in-out infinite;
+        }
+
+        .bg-orb--1 {
+            width: 500px;
+            height: 500px;
+            background: #00e676;
+            top: -150px;
+            left: -100px;
+        }
+
+        .bg-orb--2 {
+            width: 400px;
+            height: 400px;
+            background: #448aff;
+            bottom: -100px;
+            right: -80px;
+            animation-delay: -4s;
+        }
+
+        .bg-orb--3 {
+            width: 350px;
+            height: 350px;
+            background: #b388ff;
+            top: 40%;
+            left: 50%;
+            animation-delay: -8s;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -20px) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-20px, 15px) scale(0.95);
+            }
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(10, 10, 15, 0.75);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 15, 0.92);
+            padding: 12px 40px;
+        }
+
+        .nav-logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.6rem;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            cursor: pointer;
+        }
+
+        .nav-logo span {
+            -webkit-text-fill-color: var(--text-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-main);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-main);
+            color: #0a0a0f !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+            animation: fadeInUp 0.8s ease-out 0.15s both;
+        }
+
+        .gradient-text {
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out 0.45s both;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gradient-main);
+            color: #0a0a0f;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--glass);
+            border-color: var(--accent-green);
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stats-bar {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px 20px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
+        }
+
+        .section {
+            position: relative;
+            z-index: 1;
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--card-accent, var(--gradient-main));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            background: var(--icon-bg, rgba(0, 230, 118, 0.1));
+            color: var(--icon-color, var(--accent-green));
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-price {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent-green);
+        }
+
+        .card-tag {
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--accent-green);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-arrow {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--glass);
+            opacity: 0;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .service-card:hover .card-arrow {
+            opacity: 1;
+            transform: translate(4px, -4px);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .step-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .testimonial-stars {
+            color: var(--accent-gold);
+            font-size: 1rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #0a0a0f;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-handle {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--accent-green);
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: var(--transition);
+            color: var(--text-secondary);
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+            color: var(--accent-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 24px 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+
+        .cta-section {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 100px 40px;
+        }
+
+        .cta-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-main);
+        }
+
+        .cta-box h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 1.05rem;
+        }
+
+        .footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 14px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .stats-bar {
+                gap: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .cta-box {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+
+    <nav class="navbar">
+        <div class="nav-logo">FC26<span>Boost</span></div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank" class="nav-cta">Order Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge"><span class="dot"></span> Trusted by 2,000+ Players</div>
+            <h1>Dominate <span class="gradient-text">FC 26</span> Without the Grind</h1>
+            <p>We complete your Icon Swaps, Rivals, FUT Champions, and every objective — so you can enjoy the rewards
+                without the stress.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">View Services</a>
+                <a href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank" class="btn-secondary">💬 DM on
+                    Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number" data-target="2500" data-suffix="+">0</div>
+            <div class="stat-label">Orders Completed</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="100" data-suffix="%">0</div>
+            <div class="stat-label">Satisfaction Rate</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="24" data-suffix="/7">0</div>
+            <div class="stat-label">Support Available</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="500" data-suffix="+">0</div>
+            <div class="stat-label">5-Star Reviews</div>
+        </div>
+    </div>
+
+    <section class="section" id="services">
+        <div class="section-header reveal">
+            <h2>Our <span class="gradient-text">Services</span></h2>
+            <p>Choose any service below. Click to order via Instagram DM.</p>
+        </div>
+        <div class="services-grid">
+            <a href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank" class="service-card reveal"
+                style="--card-accent:linear-gradient(135deg,#00e676,#00c853);--icon-bg:rgba(0,230,118,0.12);--icon-color:#00e676">
+                <div class="card-arrow">↗</div>
+                <div class="card-icon">🔄</div>
+                <div class="card-title">Icon Swaps</div>
+                <div class="card-desc">We complete all Icon Swap tokens and objectives so you can grab the best icons
+                    hassle-free.</div>
+                <div class="card-meta"><span class="card-price">From $10</span><span class="card-tag">Popular</span>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank" class="service-card reveal"
+                style="--card-accent:linear-gradient(135deg,#448aff,#2962ff);--icon-bg:rgba(68,138,255,0.12);--icon-color:#448aff">
+                <div class="card-arrow">↗</div>
+                <div class="card-icon">⚔️</div>
+                <div class="card-title">Rivals Points</div>
+                <div class="card-desc">Climb the Rivals ladder and earn maximum rewards. We play your matches for you.
+                </div>
+                <div class="card-meta"><span class="card-price">From $8</span><span class="card-tag">Fast</span></div>
+            </a>
+            <a href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank" class="service-card reveal"
+                style="--card-accent:linear-gradient(135deg,#b388ff,#7c4dff);--icon-bg:rgba(179,136,255,0.12);--icon-color:#b388ff">
+                <div class="card-arrow">↗</div>
+                <div class="card-icon">🏆</div>
+                <div class="card-title">FUT Champions</div>
+                <div class="card-desc">Hit your desired rank in Weekend League. We guarantee wins at competitive
+                    pricing.</div>
+                <div class="card-meta"><span class="card-price">From $15</span><span class="card-tag">Premium</span>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank" class="service-card reveal"
+                style="--card-accent:linear-gradient(135deg,#ff9100,#ff6d00);--icon-bg:rgba(255,145,0,0.12);--icon-color:#ff9100">
+                <div class="card-arrow">↗</div>
+                <div class="card-icon">🎯</div>
+                <div class="card-title">Objectives</div>
+                <div class="card-desc">Any weekly, daily, or milestone objective completed quickly and efficiently.
+                </div>
+                <div class="card-meta"><span class="card-price">From $5</span><span class="card-tag">Any Task</span>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank" class="service-card reveal"
+                style="--card-accent:linear-gradient(135deg,#18ffff,#00e5ff);--icon-bg:rgba(24,255,255,0.12);--icon-color:#18ffff">
+                <div class="card-arrow">↗</div>
+                <div class="card-icon">📈</div>
+                <div class="card-title">Division Promotion</div>
+                <div class="card-desc">Get promoted to your target division in online seasons or Rivals for better
+                    rewards.</div>
+                <div class="card-meta"><span class="card-price">From $12</span><span class="card-tag">Ranked</span>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank" class="service-card reveal"
+                style="--card-accent:linear-gradient(135deg,#ffd740,#ffc400);--icon-bg:rgba(255,215,64,0.12);--icon-color:#ffd740">
+                <div class="card-arrow">↗</div>
+                <div class="card-icon">💰</div>
+                <div class="card-title">Coin Farming</div>
+                <div class="card-desc">We farm coins and complete SBCs to supercharge your Ultimate Team balance.</div>
+                <div class="card-meta"><span class="card-price">From $10</span><span class="card-tag">Value</span></div>
+            </a>
+        </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+        <div class="section-header reveal">
+            <h2>How It <span class="gradient-text">Works</span></h2>
+            <p>Get started in 3 simple steps — fast, secure, and easy.</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card reveal">
+                <div class="step-number">01</div>
+                <h3>Choose a Service</h3>
+                <p>Browse our services above and pick what you need done in FC 26.</p>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-number">02</div>
+                <h3>DM Us on Instagram</h3>
+                <p>Click the service card and send us your account details securely via Instagram DM.</p>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-number">03</div>
+                <h3>Sit Back & Enjoy</h3>
+                <p>We complete the work, you get the rewards. Payment after confirmation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="reviews">
+        <div class="section-header reveal">
+            <h2>What Players <span class="gradient-text">Say</span></h2>
+            <p>Thousands trust us with their FC 26 accounts.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">"Got all 30 Icon Swap tokens done in less than 24 hours. Insane speed and
+                    my account was completely safe. Will use again!"</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AK</div>
+                    <div>
+                        <div class="testimonial-name">Ahmed K.</div>
+                        <div class="testimonial-handle">Icon Swaps</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">"Hit Rank 3 in FUT Champs when I could barely get Rank 5 myself. These
+                    guys are cracked. Fair prices too."</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JM</div>
+                    <div>
+                        <div class="testimonial-name">Jake M.</div>
+                        <div class="testimonial-handle">FUT Champions</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-text">"I needed Rivals points ASAP before rewards and they delivered. Fast
+                    communication through Instagram. 10/10."</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">LS</div>
+                    <div>
+                        <div class="testimonial-name">Liam S.</div>
+                        <div class="testimonial-handle">Rivals Points</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="faq">
+        <div class="section-header reveal">
+            <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item reveal">
+                <div class="faq-question">Is my account safe? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    <p>Absolutely. We use secure methods, never change your password or email, and have completed
+                        thousands of orders with zero bans.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">How long does it take? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    <p>Most services are completed within 12-48 hours depending on the scope. Rush orders are available
+                        for an extra fee.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">How do I pay? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    <p>Payment is handled through Instagram DM after we confirm the details. We accept PayPal, bank
+                        transfer, and crypto.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">What if I'm not satisfied? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    <p>We offer a full refund if the service is not completed as described. Your satisfaction is our
+                        priority.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-box reveal">
+            <h2>Ready to <span class="gradient-text">Level Up?</span></h2>
+            <p>DM us on Instagram right now and get your FC 26 objectives done today.</p>
+            <a href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank" class="btn-primary">📩 Message Us on
+                Instagram</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 FC26Boost — All rights reserved. Not affiliated with EA Sports. | <a
+                href="https://www.instagram.com/YOUR_INSTAGRAM/" target="_blank">Follow us on Instagram</a></p>
+    </footer>
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 100); revealObserver.unobserve(entry.target); }
+            });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                document.querySelectorAll('.faq-item').forEach(o => { if (o !== item) o.classList.remove('open'); });
+                item.classList.toggle('open');
+            });
+        });
+
+        function animateCounters() {
+            document.querySelectorAll('.stat-number').forEach(el => {
+                const target = parseInt(el.dataset.target), suffix = el.dataset.suffix || '';
+                let current = 0; const step = Math.ceil(target / 60);
+                const timer = setInterval(() => { current += step; if (current >= target) { current = target; clearInterval(timer); } el.textContent = current.toLocaleString() + suffix; }, 25);
+            });
+        }
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { animateCounters(); statsObserver.unobserve(entry.target); } });
+        }, { threshold: 0.5 });
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) statsObserver.observe(statsBar);
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(link.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+        });
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `translateY(-6px) perspective(600px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
+            });
+            card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+        });
+    </script>
+</body>
+
+</html>
